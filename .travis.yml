@@ -1,0 +1,9 @@
+language: go
+
+go:
+  - 1.8
+
+script:
+  - mkdir lib
+  - git clone https://github.com/tsileo/blobstash_docstore_textsearch.git lib/blobstash_docstore_textsearch
+  - go test -v .
