@@ -1,5 +1,5 @@
-local tknzr = require('lib/blobstash_docstore_textsearch/tokenizer')
-local qry = require('lib/blobstash_docstore_textsearch/query')
+local tknzr = require2('github.com/tsileo/blobstash_docstore_textsearch/tokenizer')
+local qry = require2('github.com/tsileo/blobstash_docstore_textsearch/query')
 local parse_tag = require('tokenizer').parse_tag
 
 local fields = {'content', 'title'}
