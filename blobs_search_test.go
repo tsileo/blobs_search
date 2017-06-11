@@ -76,7 +76,7 @@ function parse_tag(prefix, value)
 
   return nil
 end
-local t = require('lib/blobstash_docstore_textsearch/tokenizer'):new()
+local t = require2('github.com/tsileo/blobstash_docstore_textsearch/tokenizer'):new()
 t:add_parser(parse_tags)
 return {terms = t:parse(query.qs)}
 `
