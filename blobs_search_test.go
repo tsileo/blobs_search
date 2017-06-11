@@ -6,6 +6,8 @@ import (
 	"testing"
 
 	luautil "a4.io/blobstash/pkg/apps/luautil"
+	"a4.io/gluarequire2"
+
 	"github.com/blevesearch/segment"
 	"github.com/reiver/go-porterstemmer"
 	"github.com/yuin/gopher-lua"
@@ -82,6 +84,8 @@ return {terms = t:parse(query.qs)}
 func TestBlobsSearchTokenizer(t *testing.T) {
 	L := lua.NewState()
 	defer L.Close()
+
+	gluarequire2.NewRequire2Module(gluarequire2.NewRequireFromGitHub(nil)).SetGlobal(L)
 
 	L.SetGlobal("debug", lua.LTrue)
 	L.SetGlobal("porterstemmer", L.NewFunction(ltokenize))
@@ -165,6 +169,8 @@ func TestBlobsSearchTokenizer(t *testing.T) {
 func TestBlobsSearch(t *testing.T) {
 	L := lua.NewState()
 	defer L.Close()
+
+	gluarequire2.NewRequire2Module(gluarequire2.NewRequireFromGitHub(nil)).SetGlobal(L)
 
 	L.SetGlobal("debug", lua.LTrue)
 	L.SetGlobal("porterstemmer", L.NewFunction(ltokenize))
